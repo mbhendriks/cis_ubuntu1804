@@ -1,38 +1,38 @@
 ---
-# - name: "SCORED | 1.1.1.1 | PATCH | Ensure mounting of cramfs filesystems is disabled"
-#   lineinfile:
-#       dest: /etc/modprobe.d/CIS.conf
-#       regexp: "^(#)?install cramfs(\\s|$)"
-#       line: "install cramfs /bin/true"
-#       state: present
-#       owner: root
-#       group: root
-#       mode: 0644
-#       create: true
-#   when:
-#       - ubuntu1804cis_rule_1_1_1_1
-#   tags:
-#       - level1
-#       - scored
-#       - patch
-#       - cramfs
-#       - filesystems
-#       - rule_1.1.1.1
+- name: "SCORED | 1.1.1.1 | PATCH | Ensure mounting of cramfs filesystems is disabled"
+  lineinfile:
+      dest: /etc/modprobe.d/CIS.conf
+      regexp: "^(#)?install cramfs(\\s|$)"
+      line: "install cramfs /bin/true"
+      state: present
+      owner: root
+      group: root
+      mode: 0644
+      create: true
+  when:
+      - ubuntu1804cis_rule_1_1_1_1
+  tags:
+      - level1
+      - scored
+      - patch
+      - cramfs
+      - filesystems
+      - rule_1.1.1.1
 
-# - name: "SCORED | 1.1.1.1 | PATCH | Remove cramfs module"
-#   modprobe:
-#       name: cramfs
-#       state: absent
-#   when:
-#       - ubuntu1804cis_rule_1_1_1_1
-#       - not ubuntu1804cis_skip_for_travis
-#   tags:
-#       - level1
-#       - scored
-#       - patch
-#       - cramfs
-#       - filesystems
-#       - rule_1.1.1.1
+- name: "SCORED | 1.1.1.1 | PATCH | Remove cramfs module"
+  modprobe:
+      name: cramfs
+      state: absent
+  when:
+      - ubuntu1804cis_rule_1_1_1_1
+      - not ubuntu1804cis_skip_for_travis
+  tags:
+      - level1
+      - scored
+      - patch
+      - cramfs
+      - filesystems
+      - rule_1.1.1.1
 
 - name: "SCORED | 1.1.1.2 | PATCH | Ensure mounting of freevxfs filesystems is disabled"
   lineinfile:
@@ -41,15 +41,15 @@
       line: "install freevxfs /bin/true"
       state: present
       create: true
-#   when:
-#       - ubuntu1804cis_rule_1_1_1_2
-#   tags:
-#       - level1
-#       - scored
-#       - patch
-#       - freevxfs
-#       - filesystems
-#       - rule_1.1.1.2
+  when:
+      - ubuntu1804cis_rule_1_1_1_2
+  tags:
+      - level1
+      - scored
+      - patch
+      - freevxfs
+      - filesystems
+      - rule_1.1.1.2
 
 - name: "SCORED | 1.1.1.2 | PATCH | Remove freevxfs module"
   modprobe:
