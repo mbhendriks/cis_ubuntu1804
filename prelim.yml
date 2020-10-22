@@ -63,11 +63,11 @@
 #   when:
 #       - not ubuntu1804cis_auditd_disable
 
-- name: "PRELIM | Section 5.1 | Configure cron"
-  apt:
-    name: "{{ cron_package[ansible_os_family] }}"
-    state: present
-    install_recommends: false
+# - name: "PRELIM | Section 5.1 | Configure cron"
+#   apt:
+#     name: "{{ cron_package[ansible_os_family] }}"
+#     state: present
+#     install_recommends: false
 
 - name: "PRELIM | Check if prelink package is installed"
   command: "{{ prelim_check_package_command[ansible_os_family] }} prelink"

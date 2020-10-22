@@ -19,21 +19,21 @@
     tags:
         - always
 
-  # - include: prelim.yml
-  #   become: true
-  #   tags:
-  #       - prelim_tasks
-  # #       - always
+  - include: prelim.yml
+    become: true
+    tags:
+        - prelim_tasks
+        - always
 
   # - include: section1.yml
   #   become: true
   #   when: ubuntu1804cis_section1
   #   tags: section1
 
-  - include: section2.yml
-    become: true
-    when: ubuntu1804cis_section2
-    tags: section2
+  # - include: section2.yml
+  #   become: true
+  #   when: ubuntu1804cis_section2
+  #   tags: section2
 
   # - include: section3.yml
   #   become: true
