@@ -41,15 +41,15 @@
       line: "install freevxfs /bin/true"
       state: present
       create: true
-  when:
-      - ubuntu1804cis_rule_1_1_1_2
-  tags:
-      - level1
-      - scored
-      - patch
-      - freevxfs
-      - filesystems
-      - rule_1.1.1.2
+#   when:
+#       - ubuntu1804cis_rule_1_1_1_2
+#   tags:
+#       - level1
+#       - scored
+#       - patch
+#       - freevxfs
+#       - filesystems
+#       - rule_1.1.1.2
 
 - name: "SCORED | 1.1.1.2 | PATCH | Remove freevxfs module"
   modprobe:
