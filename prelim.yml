@@ -115,14 +115,14 @@
 #   changed_when: false
 #   check_mode: false
 
-- name: "PRELIM | Check for chronyd service"
-  shell: "set -o pipefail;
-      systemctl show {{ chrony_service[ansible_os_family] }} | grep LoadState | cut -d = -f 2"
-  args:
-      executable: /bin/bash
-  register: chronyd_service_status
-  changed_when: false
-  check_mode: false
+# - name: "PRELIM | Check for chronyd service"
+#   shell: "set -o pipefail;
+#       systemctl show {{ chrony_service[ansible_os_family] }} | grep LoadState | cut -d = -f 2"
+#   args:
+#       executable: /bin/bash
+#   register: chronyd_service_status
+#   changed_when: false
+#   check_mode: false
 
 - name: "PRELIM | Check for avahi-daemon service"
   shell: "set -o pipefail;
