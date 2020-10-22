@@ -69,23 +69,23 @@
 #     state: present
 #     install_recommends: false
 
-- name: "PRELIM | Check if prelink package is installed"
-  command: "{{ prelim_check_package_command[ansible_os_family] }} prelink"
-  register: prelink_installed
-  changed_when: false
-  failed_when: false
-  check_mode: false
-  tags:
-    - skip_ansible_lint
+# - name: "PRELIM | Check if prelink package is installed"
+#   command: "{{ prelim_check_package_command[ansible_os_family] }} prelink"
+#   register: prelink_installed
+#   changed_when: false
+#   failed_when: false
+#   check_mode: false
+#   tags:
+#     - skip_ansible_lint
 
-- name: "PRELIM | Check if postfix package is installed"
-  command: "{{ prelim_check_package_command[ansible_os_family] }} postfix"
-  register: postfix_installed
-  changed_when: false
-  failed_when: false
-  check_mode: false
-  tags:
-    - skip_ansible_lint
+# - name: "PRELIM | Check if postfix package is installed"
+#   command: "{{ prelim_check_package_command[ansible_os_family] }} postfix"
+#   register: postfix_installed
+#   changed_when: false
+#   failed_when: false
+#   check_mode: false
+#   tags:
+#     - skip_ansible_lint
 
 # Individual service checks
 - name: "PRELIM | Check for xinetd service"
