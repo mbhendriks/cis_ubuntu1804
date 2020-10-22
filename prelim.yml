@@ -55,13 +55,13 @@
     update_cache: true
   changed_when: false
 
-- name: "PRELIM | Section 4.1 | Configure System Accounting (auditd)"
-  apt:
-    name: "{{ auditd_package[ansible_os_family] }}"
-    state: present
-    install_recommends: false
-  when:
-      - not ubuntu1804cis_auditd_disable
+# - name: "PRELIM | Section 4.1 | Configure System Accounting (auditd)"
+#   apt:
+#     name: "{{ auditd_package[ansible_os_family] }}"
+#     state: present
+#     install_recommends: false
+#   when:
+#       - not ubuntu1804cis_auditd_disable
 
 - name: "PRELIM | Section 5.1 | Configure cron"
   apt:
